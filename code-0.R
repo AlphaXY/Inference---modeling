@@ -22,13 +22,13 @@ inside <- replicate(B, {
   between(p, x_hat - 1.96 * se_hat, x_hat + 1.96 * se_hat)
 })
 mean(inside)
-#
+#data from 2016 election
 data("polls_us_election_2016")
 library(tidyverse)
 polls <- polls_us_election_2016 %>% 
   filter(enddate >= "2016-10-31" & state == "U.S.") 
 N <- polls$samplesize[1]
-x_hat <- polls$rawpoll_clinton[1]/100
+x_hat <- polls$rawpoll_clinton[1]/99
 # Adding a column that contains the spreads using pipeline
 polls <- polls_us_election_2016 %>% 
   filter(enddate >= "2016-10-31" & state == "U.S.")  %>%
